@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kMz-E6-2lx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bow ties!-->
+        <scene sceneID="uVv-6k-P4F">
+            <objects>
+                <viewController id="kMz-E6-2lx" customClass="ViewController" customModule="Bow_Ties" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGe-ob-YYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="58a-fg-eLO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b74-7n-5gx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5G5-wI-A3w">
+                                <segments>
+                                    <segment title="R"/>
+                                    <segment title="O"/>
+                                    <segment title="Y"/>
+                                    <segment title="G"/>
+                                    <segment title="B"/>
+                                    <segment title="I"/>
+                                    <segment title="V"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControl:" destination="kMz-E6-2lx" eventType="valueChanged" id="QIv-Nb-lh9"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nrv-LI-f76">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="J2U-uo-ZxK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY8-A3-gZO">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="dtF-NI-wJe"/>
+                                </constraints>
+                                <state key="normal" title="Wear">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wear:" destination="kMz-E6-2lx" eventType="touchUpInside" id="1Ld-NC-7pF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-vr-SuU">
+                                <state key="normal" title="Rate">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rate:" destination="kMz-E6-2lx" eventType="touchUpInside" id="ggg-SL-h5t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bow Tie Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ca-cH-ZL4">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of times worn: 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwf-Ti-TyR">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last worn: 06/25/14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VP-OO-tbM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: 4/5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-jp-q4z">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Favorite*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMy-3d-eyl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Ca-cH-ZL4" firstAttribute="leading" secondItem="qwf-Ti-TyR" secondAttribute="leading" id="9Ps-9k-q4C"/>
+                            <constraint firstAttribute="trailing" secondItem="nrv-LI-f76" secondAttribute="trailing" constant="20" id="AJI-kY-ynC"/>
+                            <constraint firstItem="3Ca-cH-ZL4" firstAttribute="leading" secondItem="b74-7n-5gx" secondAttribute="leading" constant="20" id="DPs-6B-g4w"/>
+                            <constraint firstItem="RMy-3d-eyl" firstAttribute="top" secondItem="8VP-OO-tbM" secondAttribute="bottom" constant="8" id="E8E-fq-nwb"/>
+                            <constraint firstItem="3Ca-cH-ZL4" firstAttribute="top" secondItem="nrv-LI-f76" secondAttribute="bottom" constant="10" id="GkW-r4-q6i"/>
+                            <constraint firstItem="8VP-OO-tbM" firstAttribute="top" secondItem="qwf-Ti-TyR" secondAttribute="bottom" constant="8" id="M6m-Fx-bda"/>
+                            <constraint firstItem="nrv-LI-f76" firstAttribute="top" secondItem="5G5-wI-A3w" secondAttribute="bottom" constant="15" id="MWX-oG-RXh"/>
+                            <constraint firstItem="tY8-A3-gZO" firstAttribute="leading" secondItem="b74-7n-5gx" secondAttribute="leading" constant="20" id="SCC-PV-NTh"/>
+                            <constraint firstItem="qwf-Ti-TyR" firstAttribute="top" secondItem="JSl-jp-q4z" secondAttribute="bottom" constant="8" id="SJa-5P-qet"/>
+                            <constraint firstItem="5G5-wI-A3w" firstAttribute="leading" secondItem="b74-7n-5gx" secondAttribute="leading" constant="20" id="ZTt-8t-YON"/>
+                            <constraint firstItem="s2a-vr-SuU" firstAttribute="bottom" secondItem="tY8-A3-gZO" secondAttribute="bottom" id="aiq-zm-68S"/>
+                            <constraint firstAttribute="trailing" secondItem="5G5-wI-A3w" secondAttribute="trailing" constant="20" id="dgv-WD-Lf7"/>
+                            <constraint firstItem="8VP-OO-tbM" firstAttribute="leading" secondItem="3Ca-cH-ZL4" secondAttribute="leading" id="g4z-Hp-ihE"/>
+                            <constraint firstItem="nrv-LI-f76" firstAttribute="leading" secondItem="b74-7n-5gx" secondAttribute="leading" constant="20" id="jqJ-42-iQj"/>
+                            <constraint firstAttribute="trailing" secondItem="s2a-vr-SuU" secondAttribute="trailing" constant="20" id="mQZ-nS-TgV"/>
+                            <constraint firstItem="s2a-vr-SuU" firstAttribute="width" secondItem="tY8-A3-gZO" secondAttribute="width" id="paS-Wt-HWR"/>
+                            <constraint firstItem="3Ca-cH-ZL4" firstAttribute="leading" secondItem="JSl-jp-q4z" secondAttribute="leading" id="qr7-96-lXU"/>
+                            <constraint firstItem="JSl-jp-q4z" firstAttribute="top" secondItem="3Ca-cH-ZL4" secondAttribute="bottom" constant="8" id="sxD-f0-SQO"/>
+                            <constraint firstItem="5G5-wI-A3w" firstAttribute="top" secondItem="tGe-ob-YYI" secondAttribute="bottom" constant="50" id="u7Z-8Y-jyc">
+                                <variation key="heightClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstItem="8VP-OO-tbM" firstAttribute="leading" secondItem="RMy-3d-eyl" secondAttribute="leading" id="xVW-FK-Crm"/>
+                            <constraint firstItem="58a-fg-eLO" firstAttribute="top" secondItem="tY8-A3-gZO" secondAttribute="bottom" constant="32" id="xiD-rZ-Txi">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bow ties!" id="FRR-Wk-Zrc"/>
+                    <connections>
+                        <outlet property="favoriteLabel" destination="RMy-3d-eyl" id="Sfv-bd-tOV"/>
+                        <outlet property="imageView" destination="nrv-LI-f76" id="3qM-SK-eCq"/>
+                        <outlet property="lastWornLabel" destination="8VP-OO-tbM" id="TaJ-Vh-98I"/>
+                        <outlet property="nameLabel" destination="3Ca-cH-ZL4" id="ycI-ef-XkB"/>
+                        <outlet property="ratingLabel" destination="JSl-jp-q4z" id="qwk-mg-iow"/>
+                        <outlet property="segmentedControl" destination="5G5-wI-A3w" id="9NE-67-ClB"/>
+                        <outlet property="timesWornLabel" destination="qwf-Ti-TyR" id="w7X-Rb-5dz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFI-CE-8cp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-891" y="762.75"/>
+        </scene>
+    </scenes>
+</document>
