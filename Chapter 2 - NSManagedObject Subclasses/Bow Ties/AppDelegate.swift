@@ -30,19 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    let bowTie = NSEntityDescription.insertNewObject(forEntityName: "Bowtie", into: self.persistentContainer.viewContext) as! Bowtie
-    bowTie.name = "My bow tie"
-    bowTie.lastWorn = NSDate()
+    guard let vc = window?.rootViewController as? ViewController else { return true }
     
-    do {
-      let request = NSFetchRequest<Bowtie>(entityName: "Bowtie")
-      let ties = try self.persistentContainer.viewContext.fetch(request)
-      
-      let sample = ties.first
-      print("Name: \(sample?.name), Worn: \(sample?.lastWorn)")
-    } catch let error as NSError {
-      print("Fetching error: \(error), \(error.userInfo)")
-    }
+    vc.managedContext = persistentContainer.viewContext
     
     return true
   }
