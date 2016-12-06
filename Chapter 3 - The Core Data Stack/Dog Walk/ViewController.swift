@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
         formatter.timeStyle = .medium
         return formatter
     }()
+    var managedContext: NSManagedObjectContext!
     var walks: [NSDate] = []
     
     // MARK: - IBOutlets
