@@ -41,9 +41,9 @@
 				FEAB7CA71D7385CB00570B31 /* Dog Walk */,
 				FEAB7CA61D7385CB00570B31 /* Products */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		FEAB7CA61D7385CB00570B31 /* Products */ = {
 			isa = PBXGroup;
