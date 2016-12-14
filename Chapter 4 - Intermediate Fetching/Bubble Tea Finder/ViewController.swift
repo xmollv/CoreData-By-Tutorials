@@ -48,9 +48,8 @@ class ViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == filterViewControllerSegueIdentifier {
-            
-        }
+        guard segue.identifier == filterViewControllerSegueIdentifier, let navController = segue.destination as? UINavigationController, let filterVC = navController.topViewController as? FilterViewController else { return }
+        filterVC.coreDataStack = coreDataStack
     }
 }
 

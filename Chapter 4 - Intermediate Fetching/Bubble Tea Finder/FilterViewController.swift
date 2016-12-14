@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import CoreData
 
 class FilterViewController: UITableViewController {
     
@@ -45,10 +46,18 @@ class FilterViewController: UITableViewController {
     @IBOutlet weak var distanceSortCell: UITableViewCell!
     @IBOutlet weak var priceSortCell: UITableViewCell!
     
+    // MARK: - Properties
+    var coreDataStack: CoreDataStack!
+    
+    lazy var cheapVenuePredicate: NSPredicate = {
+        // Venue.priceInfoPriceCategory that equals to "$". There are $, $$, and $$$, based on the cost
+        return NSPredicate(format: "%K == %@", #keyPath(Venue.priceInfo.priceCategory), "$")
+    }()
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        populateCheapVenueCountLabel()
     }
 }
 
@@ -65,5 +74,23 @@ extension FilterViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+// MARK: - Helper methods
+extension FilterViewController {
+    func populateCheapVenueCountLabel() {
+        // The fetch request expects an array of NSNumber because we ask for the .countResultType
+        let fetchRequest = NSFetchRequest<NSNumber>(entityName: "Venue")
+        fetchRequest.resultType = .countResultType //This returns an [Int] instead of an [Venue]
+        fetchRequest.predicate = cheapVenuePredicate
+        
+        do {
+            let countResult = try coreDataStack.managedContext.fetch(fetchRequest)
+            let count = countResult.first!.intValue
+            firstPriceCategoryLabel.text = "\(count) bubble tea places"
+        } catch let error as NSError {
+            print("Count not fetch \(error), \(error.userInfo)")
+        }
     }
 }
