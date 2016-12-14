@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     
     var coreDataStack: CoreDataStack!
     var fetchRequest: NSFetchRequest<Venue>!
-    var venues: [Venue]!
+    var venues: [Venue] = []
+    
+    var asyncFetchRequest: NSAsynchronousFetchRequest<Venue>!
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -41,7 +43,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         fetchRequest = Venue.fetchRequest()
-        fetchAndReload()
+        
+        asyncFetchRequest = NSAsynchronousFetchRequest<Venue>(fetchRequest: fetchRequest) { [unowned self] (result: NSAsynchronousFetchResult) in
+            guard let venues = result.finalResult else { return }
+            
+            self.venues = venues
+            self.tableView.reloadData()
+        }
+        
+        do {
+            try coreDataStack.managedContext.execute(asyncFetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     // MARK: - Navigation
