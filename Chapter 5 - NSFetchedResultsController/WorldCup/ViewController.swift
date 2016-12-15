@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         
         let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
         
+        
         let zoneSort = NSSortDescriptor(key: #keyPath(Team.qualifyingZone), ascending: true)
         let scoreSort = NSSortDescriptor(key: #keyPath(Team.wins), ascending: false)
         let nameSort = NSSortDescriptor(key: #keyPath(Team.teamName), ascending: true)
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
                                                               managedObjectContext: coreDataStack.managedContext,
                                                               sectionNameKeyPath: #keyPath(Team.qualifyingZone),
                                                               cacheName: "worldCup")
+        fetchedResultsController.delegate = self
         
         do {
             try fetchedResultsController.performFetch()
@@ -114,6 +116,12 @@ extension ViewController: UITableViewDelegate {
         let team = fetchedResultsController.object(at: indexPath)
         team.wins = team.wins + 1
         coreDataStack.saveContext()
+    }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension ViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
 }
