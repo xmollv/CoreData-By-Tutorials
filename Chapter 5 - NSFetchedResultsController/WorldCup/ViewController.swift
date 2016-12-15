@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                               managedObjectContext: coreDataStack.managedContext,
                                                               sectionNameKeyPath: #keyPath(Team.qualifyingZone),
-                                                              cacheName: nil)
+                                                              cacheName: "worldCup")
         
         do {
             try fetchedResultsController.performFetch()
