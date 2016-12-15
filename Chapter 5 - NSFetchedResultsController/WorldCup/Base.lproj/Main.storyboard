@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rpQ-3j-fq5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ff1-6j-cfx">
+            <objects>
+                <navigationController id="rpQ-3j-fq5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zL3-zG-O04">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DcY-rc-3Zz" kind="relationship" relationship="rootViewController" id="dHw-q5-xvn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ki7-9r-wag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="-479"/>
+        </scene>
+        <!--World Cup!-->
+        <scene sceneID="Xgq-QX-QCs">
+            <objects>
+                <viewController id="DcY-rc-3Zz" customClass="ViewController" customModule="WorldCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u3D-Zf-neF"/>
+                        <viewControllerLayoutGuide type="bottom" id="P3B-Dv-reD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rJy-7o-37a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-El-axg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teamCellReuseIdentifier" id="fJU-BI-pOw" userLabel="teamCellReuseIdentifier" customClass="TeamCell" customModule="WorldCup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fJU-BI-pOw" id="e7C-Me-6lH">
+                                            <frame key="frameInset" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-WQ-0qW" userLabel="Flag Image View">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="117" id="8SO-PN-fle"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea2-pz-shd" userLabel="Team Label">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8S-Pm-3dB" userLabel="Score Label">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ea2-pz-shd" firstAttribute="leading" secondItem="Qbz-WQ-0qW" secondAttribute="trailing" constant="8" symbolic="YES" id="4pT-N7-d5f"/>
+                                                <constraint firstItem="Qbz-WQ-0qW" firstAttribute="top" secondItem="e7C-Me-6lH" secondAttribute="top" id="9rY-Ls-f3C"/>
+                                                <constraint firstItem="Ea2-pz-shd" firstAttribute="top" secondItem="e7C-Me-6lH" secondAttribute="top" constant="5" id="FHB-Qj-GF1"/>
+                                                <constraint firstItem="Qbz-WQ-0qW" firstAttribute="leading" secondItem="e7C-Me-6lH" secondAttribute="leading" id="K3e-1w-8Lc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n8S-Pm-3dB" secondAttribute="bottom" constant="5" id="NG0-VE-w3d"/>
+                                                <constraint firstItem="n8S-Pm-3dB" firstAttribute="leading" secondItem="Ea2-pz-shd" secondAttribute="leading" id="gss-0D-Rjx"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qbz-WQ-0qW" secondAttribute="bottom" id="hAS-Jk-8ro"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flagImageView" destination="Qbz-WQ-0qW" id="V4D-DP-ebq"/>
+                                            <outlet property="scoreLabel" destination="n8S-Pm-3dB" id="Guk-A7-fkj"/>
+                                            <outlet property="teamLabel" destination="Ea2-pz-shd" id="mdh-5K-9Lk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DcY-rc-3Zz" id="d6F-VP-EBQ"/>
+                                    <outlet property="delegate" destination="DcY-rc-3Zz" id="fkc-Jg-Tmh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6bW-El-axg" firstAttribute="leading" secondItem="rJy-7o-37a" secondAttribute="leading" id="Ffe-le-3S9"/>
+                            <constraint firstItem="P3B-Dv-reD" firstAttribute="top" secondItem="6bW-El-axg" secondAttribute="bottom" id="Yeg-Xp-Hae"/>
+                            <constraint firstAttribute="trailing" secondItem="6bW-El-axg" secondAttribute="trailing" id="u3k-kF-3Up"/>
+                            <constraint firstItem="6bW-El-axg" firstAttribute="top" secondItem="rJy-7o-37a" secondAttribute="top" id="ztY-Uw-IqX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="World Cup!" id="Eeg-Il-yC8">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="eF4-Qr-s85">
+                            <connections>
+                                <action selector="addTeam:" destination="DcY-rc-3Zz" id="Y5n-Ij-F0s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="eF4-Qr-s85" id="L4e-Xu-c9q"/>
+                        <outlet property="tableView" destination="6bW-El-axg" id="9di-Na-IDw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VwU-lg-sk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="-475.41229385307349"/>
+        </scene>
+    </scenes>
+</document>
