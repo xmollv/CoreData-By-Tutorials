@@ -58,6 +58,44 @@ class ViewController: UIViewController {
             print("Fetching error: \(error), \(error.userInfo)")
         }
     }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            addButton.isEnabled = true
+        }
+    }
+}
+
+extension ViewController {
+    
+    @IBAction func addTeam(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Secret Team", message: "Add a new team", preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Team name..."
+        }
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Qualifying zone..."
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+            guard let nameTextField = alert.textFields?.first, let zoneTextField = alert.textFields?.last else {
+                return
+            }
+            
+            let team = Team(context: self.coreDataStack.managedContext)
+            team.teamName = nameTextField.text
+            team.qualifyingZone = zoneTextField.text
+            team.imageName = "wenderland-flag"
+            self.coreDataStack.saveContext()
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Internal
@@ -152,6 +190,7 @@ extension ViewController: NSFetchedResultsControllerDelegate {
             tableView.insertSections(indexSet, with: .automatic)
         case .delete:
             tableView.deleteSections(indexSet, with: .automatic)
+        default: break
         }
     }
 }
