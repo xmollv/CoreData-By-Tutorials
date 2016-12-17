@@ -29,6 +29,7 @@
 		279570D619827BC400F52BA9 /* ImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformer.swift; sourceTree = "<group>"; };
 		790FC6E3198439AD00B52A53 /* AttachPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachPhotoViewController.swift; sourceTree = "<group>"; };
 		95863A161D6DE01200247AE2 /* NoteImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteImageTableViewCell.swift; sourceTree = "<group>"; };
+		B1BB6A721E05497200DD74A5 /* UnCloudNotesDataModel v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "UnCloudNotesDataModel v2.xcdatamodel"; sourceTree = "<group>"; };
 		C71A68731948D2CB003A62E7 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CreateNoteViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C73DC121195148B500DFADAB /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreDataStack.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C75D48831950CF7900648D63 /* NotesListViewController+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NotesListViewController+Additions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -365,9 +366,10 @@
 		C7F78B92194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B1BB6A721E05497200DD74A5 /* UnCloudNotesDataModel v2.xcdatamodel */,
 				C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */,
 			);
-			currentVersion = C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */;
+			currentVersion = B1BB6A721E05497200DD74A5 /* UnCloudNotesDataModel v2.xcdatamodel */;
 			path = UnCloudNotesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
