@@ -84,8 +84,14 @@ extension NotesListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as! NoteTableViewCell
-        cell.note = notes.object(at: indexPath)
+        let note = notes.object(at: indexPath)
+        let cell: NoteTableViewCell
+        if note.image == nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as! NoteTableViewCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoteCellWithImage", for: indexPath) as! NoteImageTableViewCell
+        }
+        cell.note = note
         return cell
     }
 }
