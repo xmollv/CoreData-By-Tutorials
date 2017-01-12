@@ -42,7 +42,7 @@ class CamperServiceTests: XCTestCase {
       return true
     }
     
-    let camper = camperService.addCamper("Bacon Lover", phoneNumber: "901-543-9000")
+    let camper = camperService.addCamper("Bacon Lover", phoneNumber: "901-543-9000")!
     XCTAssertNotNil(camper, "Camper should not be nil")
     
     waitForExpectations(timeout: 2.0) { (error) in
