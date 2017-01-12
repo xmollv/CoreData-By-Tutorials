@@ -55,9 +55,17 @@ extension CampSiteService {
   }
   
   public func getCampSite(_ siteNumber: NSNumber) -> CampSite? {
-    // TODO : Not yet implemented
+    let fetchRequest: NSFetchRequest<CampSite> = CampSite.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: "siteNumber == %@", argumentArray: [siteNumber])
     
-    return nil
+    let results: [CampSite]?
+    do {
+      results = try managedObjectContext.fetch(fetchRequest)
+    } catch {
+      return nil
+    }
+    
+    return results?.first
   }
   
   public func getCampSites() -> [CampSite] {

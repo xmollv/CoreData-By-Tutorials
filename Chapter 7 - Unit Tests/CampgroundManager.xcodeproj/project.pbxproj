@@ -24,6 +24,9 @@
 		93CF1D7E19A17A42003FBB14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93CF1D7D19A17A42003FBB14 /* Images.xcassets */; };
 		93CF1D9D19A23F01003FBB14 /* CampSiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF1D9C19A23F01003FBB14 /* CampSiteService.swift */; };
 		93DC421B19A6D4E900D015A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC421A19A6D4E900D015A8 /* CoreDataStack.swift */; };
+		B15C6E121E27F95F0007BF1C /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6E111E27F95F0007BF1C /* TestCoreDataStack.swift */; };
+		B15C6E141E27FA850007BF1C /* CamperServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6E131E27FA850007BF1C /* CamperServiceTests.swift */; };
+		B15C6E161E2801E70007BF1C /* CampSiteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6E151E2801E70007BF1C /* CampSiteServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		93CF1D9419A17F25003FBB14 /* CampgroundManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampgroundManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		93CF1D9C19A23F01003FBB14 /* CampSiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampSiteService.swift; sourceTree = "<group>"; };
 		93DC421A19A6D4E900D015A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B15C6E111E27F95F0007BF1C /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		B15C6E131E27FA850007BF1C /* CamperServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamperServiceTests.swift; sourceTree = "<group>"; };
+		B15C6E151E2801E70007BF1C /* CampSiteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampSiteServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,9 @@
 				93CF1D9C19A23F01003FBB14 /* CampSiteService.swift */,
 				93DC421A19A6D4E900D015A8 /* CoreDataStack.swift */,
 				93CAF0D819AA98660028DCCE /* ReservationService.swift */,
+				B15C6E111E27F95F0007BF1C /* TestCoreDataStack.swift */,
+				B15C6E131E27FA850007BF1C /* CamperServiceTests.swift */,
+				B15C6E151E2801E70007BF1C /* CampSiteServiceTests.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -218,7 +227,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Razeware;
 				TargetAttributes = {
 					93CF1D6B19A17A42003FBB14 = {
@@ -227,7 +236,7 @@
 					};
 					93CF1D8219A17A42003FBB14 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						TestTargetID = 93CF1D6B19A17A42003FBB14;
 					};
 				};
@@ -297,6 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15C6E161E2801E70007BF1C /* CampSiteServiceTests.swift in Sources */,
+				B15C6E121E27F95F0007BF1C /* TestCoreDataStack.swift in Sources */,
+				B15C6E141E27FA850007BF1C /* CamperServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +347,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -379,8 +393,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;

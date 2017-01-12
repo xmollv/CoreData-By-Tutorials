@@ -23,7 +23,7 @@
 import Foundation
 import CoreData
 
-public class CoreDataStack {
+open class CoreDataStack {
 
   let modelName: String
 
